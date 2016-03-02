@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+	<title>Quiz</title>
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body ng-app="quizHTML" ng-controller="answerController" background = "http://www.56thparallel.com/wp-content/uploads/2013/05/Northern-Lights-Winter.jpg">
+	<h1><center><font color="White">Quiz</font></center></h1>
+	<hr/>
+	<div class="container" ng-controller="answerController">
+		 <div ng-repeat="question in quizQuestions track by $index" class="question col-md-12 col-sm-12 col-xs-12">
+      <form action = "">
+                <font color="Chartreuse" size="6">Question {{$index+1}}: {{question.question}}</font>  <br>
+                <div class = "radio">
+                  <label>
+                    <input type="radio" name="option1" id="option1{{$index}}" value="option1" ng-click="correctTest($index, question.isRight)">
+                    <font color="red" size="5">Answer1: {{question.answer1}}</font> <br>
+                  </label>
+                </div>  
+                <div class = "radio">
+                  <label>
+                    <input type="radio" name="option1" id="option2{{$index}}" value="option2" ng-click="correctTest($index, question.isRight)">
+                    <font color="Yellow" size="5">Answer2: {{question.answer2}}</font> <br>
+                  </label>
+                </div>
+                <div class = "radio">
+                  <label>
+                    <input type="radio" name="option1" id="option3{{$index}}" value="option3" ng-click="correctTest($index, question.isRight)">
+                    <font color="SpringGreen" size="5">Answer3: {{question.answer3}}</font> <br>
+                  </label>
+                </div>
+                <div class = "radio">
+                  <label>
+                    <input type="radio" name="option1" id="option4{{$index}}" value="option4" ng-click="correctTest($index, question.isRight)">
+                    <font color="aqua" size="5">Answer4: {{question.answer4}}</font> <br><br>
+                  </label>
+                </div>
+              </form>
+		 </div>
+     <input class="button" type="submit" id="post" value="See Results" onclick="window.location='/quizQuestions/simonsQuiz/results';" />
+	</div>
+
+
+	<!-- Live reload script -->
+  	<script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
+  	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  	<script type="text/javascript" src="/js/controller.js"></script>
+
+ </body>
+ </html>

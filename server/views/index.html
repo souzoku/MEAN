@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>  
+  <meta charset="UTF-8">
+  <title>Quizpedia</title>
+  <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body ng-app="quizApp" background="http://cdn.bigbangfish.com/beautiful/beautiful-sunset/beautiful-sunset-7.jpg"> 
+  <div class="container">
+    <h1><center><font color="White">Quizpedia</font></center></h1>
+    <hr/>
+    <center><font color="White" size="4">Create a question with 4 answers and check the right answer <br>
+        <i>See Quiz</i> will look at the collection of quizzes, <i>Save question</i> will save your question, and <i>Post</i> will do both!</font></center>
+    <form ng-submit="addQuestion()" name="questionForm" ng-controller="QuizController">
+      <input type="text" class="form-control input-lg" placeholder="Enter a question" ng-model="questionInput" />
+          <div class = "radio">
+                <input type="radio" name="option" id="option1" value="option1">
+                <input type="text" class="form-control input-lg" placeholder="Quiz Answer1" ng-model="answer1Input" />
+          </div>
+          <div class = "radio">
+                <input type="radio" name="option" id="option2" value="option1">
+                <input type="text" class="form-control input-lg" placeholder="Quiz Answer2" ng-model="answer2Input" />
+          </div>
+          <div class = "radio">
+                <input type="radio" name="option" id="option3" value="option1">
+                <input type="text" class="form-control input-lg" placeholder="Quiz Answer3" ng-model="answer3Input" />
+          </div>
+          <div class = "radio">
+                <input type="radio" name="option" id="option4" value="option1">
+                <input type="text" class="form-control input-lg" placeholder="Quiz Answer4" ng-model="answer4Input" />
+          </div>
+      <input class="button" type="submit" id="Posting" value="Post" style="float: right"  onclick="window.location='/quizQuestions/simonsQuiz' " onclick="addQuestion()"/>
+      <input class="button" type="submit" id="post" value="See Quiz" style="float: right" onclick="window.location='/quizQuestions/simonsQuiz' " />
+      <input class="button" type="submit" id="submit" value="Save question" style="float: right;" />
+    </form>
+  </div>
+
+  <!-- Live reload script -->
+  <script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/controller.js"></script>
+
+ </body>
+ </html>
