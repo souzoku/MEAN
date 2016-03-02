@@ -9,7 +9,7 @@
 	<h1><center><font color="White">Result</font></center></h1>
 	<hr/>
 	<div class="container">
-		<div ng-repeat="question in quizQuestions track by $index" class="question col-md-12 col-sm-12 col-xs-12">
+		<div ng-repeat="question in quizQuestions | limitTo:5: quizQuestions.length-5 " class="question col-md-12 col-sm-12 col-xs-12">
 			<font color="White" size="5">{{question.question}}: {{question.isRight}} points </font>
 		</div>
 		<input class="button" type="submit" id="MainPage" value="Back to main page" onclick="window.location='/';" />

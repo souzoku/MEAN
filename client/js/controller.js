@@ -53,7 +53,7 @@ quizApp.controller('QuizController', function($scope, $http) {
 	};
 
 	$scope.reset = function() {
-		for (var k=0; k< 2; k++) {
+		for (var k=0; k< quizQuestions.length; k++) {
 			resetRight(k, $scope.quizQuestions[k].isRight);
 	    }
     };

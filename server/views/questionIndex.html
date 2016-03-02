@@ -9,7 +9,7 @@
 	<h1><center><font color="White">Quiz</font></center></h1>
 	<hr/>
 	<div class="container" ng-controller="answerController">
-		 <div ng-repeat="question in quizQuestions track by $index" class="question col-md-12 col-sm-12 col-xs-12">
+		 <div ng-repeat="question in quizQuestions | limitTo:5: quizQuestions.length-5" class="question col-md-12 col-sm-12 col-xs-12">
       <form action = "">
                 <font color="Chartreuse" size="6">Question {{$index+1}}: {{question.question}}</font>  <br>
                 <div class = "radio">
