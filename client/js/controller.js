@@ -74,21 +74,22 @@ quizHTML.controller('answerController', function($scope, $http) {
 			//update the status of the Todo
 
   	$scope.correctTest = function($index, isRight) {
-  		if(document.getElementById("option" + $scope.quizQuestions[$index].correctAnswer + $index).checked){
+  		if(document.getElementById("option" + $scope.quizQuestions[$scope.quizQuestions.length-5+$index].correctAnswer + $index).checked){
     		$http.put('/quizQuestions', {
-    			_id: $scope.quizQuestions[$index]._id,
+    			_id: $scope.quizQuestions[$scope.quizQuestions.length-5+$index]._id,
       			isRight: 1
       		}).then(function(data) {
-      			$scope.quizQuestions[$index].isRight = 1;
+      			$scope.quizQuestions[$scope.quizQuestions.length-5+$index].isRight = 1;
     		});
       	}
+      	console.log($scope.quizQuestions.length-5+$index);
 
-    	if (document.getElementById("option" + $scope.quizQuestions[$index].correctAnswer + $index).checked === false){
+    	if (document.getElementById("option" + $scope.quizQuestions[$scope.quizQuestions.length-5+$index].correctAnswer + $index).checked === false){
     		$http.put('/quizQuestions', {
-    			_id: $scope.quizQuestions[$index]._id,
+    			_id: $scope.quizQuestions[$scope.quizQuestions.length-5+$index]._id,
     			isRight: 0
     		}).then(function(data) {
-    			$scope.quizQuestions[$index].isRight = 0;
+    			$scope.quizQuestions[$scope.quizQuestions.length-5+$index].isRight = 0;
     		});
     	}
     };
