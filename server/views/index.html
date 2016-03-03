@@ -32,7 +32,7 @@
                 <input type="radio" name="option" id="option4" value="option1">
                 <input type="text" class="form-control input-lg" placeholder="Quiz Answer4" ng-model="answer4Input" />
           </div>
-      <input class="button" type="submit" id="post" value="See Quiz" style="float: right" onclick="window.location='/quizQuestions/simonsQuiz' " />
+      <input class="button" type="submit" id="post" value="See Quiz" style="float: right" ng-click="resetSubmit() " />
       <input class="button" type="submit" id="submit" value="Save question" style="float: right;" />
     </form>
   </div>
