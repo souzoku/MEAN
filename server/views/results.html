@@ -10,7 +10,8 @@
 	<hr/>
 	<div class="container">
 		<div ng-repeat="question in quizQuestions | limitTo:5: quizQuestions.length-5 " class="question col-md-12 col-sm-12 col-xs-12">
-			<font color="White" size="5">{{question.question}}: {{question.isRight}} points </font>
+			<font color="White" size="5">{{question.question}}: {{question.isRight}} points </font><br>
+			<font color="Yellow" size = "5">Correct Answer: {{question.finalAnswer}}</font>
 		</div>
 		<input class="button" type="submit" id="MainPage" value="Back to main page" onclick="window.location='/';" />
 	</div>

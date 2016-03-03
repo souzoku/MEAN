@@ -12,14 +12,24 @@ quizApp.controller('QuizController', function($scope, $http) {
 	$scope.addQuestion = function() {
 		if($scope.questionInput) {
 			var correctAnswer = 0;
-			if(document.getElementById("option1").checked)
+			var finalAnswer;
+			if(document.getElementById("option1").checked) {
 				correctAnswer = 1;
-			else if(document.getElementById("option2").checked)
+				finalAnswer = $scope.answer1Input;
+			}
+			else if(document.getElementById("option2").checked) {
 				correctAnswer = 2;
-			else if(document.getElementById("option3").checked)
+				finalAnswer = $scope.answer2Input;
+			}
+			else if(document.getElementById("option3").checked) {
 				correctAnswer = 3;
-			else if(document.getElementById("option4").checked)
+				finalAnswer = $scope.answer3Input;
+			}
+			else if(document.getElementById("option4").checked) {
 				correctAnswer = 4;
+				finalAnswer = $scope.answer4Input;
+			}
+
 			if (correctAnswer > 0 &&
 				$scope.questionInput &&
 				$scope.answer1Input &&
@@ -33,7 +43,8 @@ quizApp.controller('QuizController', function($scope, $http) {
 					"answer3": $scope.answer3Input,
 					"answer4": $scope.answer4Input, 
 					"isRight": 0,
-					"correctAnswer": correctAnswer
+					"correctAnswer": correctAnswer,
+					"finalAnswer": finalAnswer
 				}).then(function(question) {
 					$scope.quizQuestions.push(question.data);
 				});
