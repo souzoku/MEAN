@@ -45,16 +45,16 @@ quizApp.controller('QuizController', function($scope, $http) {
 
 	$scope.resetRight = function(k, isRight) {
 		$http.put('/quizQuestions', {
-    			_id: $scope.quizQuestions[0]._id,
+    			_id: $scope.quizQuestions[k]._id,
     			isRight: 0
 	    	}).then(function(data) {
-    			$scope.quizQuestions[0].isRight = 0;
+    			$scope.quizQuestions[k].isRight = 0;
     		});
 	};
 
 	$scope.reset = function() {
-		for (var k=0; k< quizQuestions.length; k++) {
-			resetRight(k, $scope.quizQuestions[k].isRight);
+		for (var k=0; k< $scope.quizQuestions.length; k++) {
+			$scope.resetRight(k, $scope.quizQuestions[k].isRight);
 	    }
     };
 
@@ -82,7 +82,6 @@ quizHTML.controller('answerController', function($scope, $http) {
       			$scope.quizQuestions[$scope.quizQuestions.length-5+$index].isRight = 1;
     		});
       	}
-      	console.log($scope.quizQuestions.length-5+$index);
 
     	if (document.getElementById("option" + $scope.quizQuestions[$scope.quizQuestions.length-5+$index].correctAnswer + $index).checked === false){
     		$http.put('/quizQuestions', {
