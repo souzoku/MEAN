@@ -20,12 +20,12 @@ quizApp.controller('QuizController', function($scope, $http) {
 				correctAnswer = 3;
 			else if(document.getElementById("option4").checked)
 				correctAnswer = 4;
-			if (correctAnswer > 0 
-				&& $scope.questionInput 
-				&& $scope.answer1Input
-				&& $scope.answer2Input
-				&& $scope.answer3Input
-				&& $scope.answer4Input) {
+			if (correctAnswer > 0 &&
+				$scope.questionInput &&
+				$scope.answer1Input &&
+				$scope.answer2Input &&
+				$scope.answer3Input &&
+				$scope.answer4Input) {
 				$http.post('/quizQuestions', {
 					"question": $scope.questionInput,
 					"answer1": $scope.answer1Input,
