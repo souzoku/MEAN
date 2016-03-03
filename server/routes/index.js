@@ -18,11 +18,11 @@
     });
   });
 
-  router.get('/quizQuestions/:name', function(req, res) {
+  router.get('/:name', function(req, res) {
     res.render('questionIndex');
   });
 
-  router.get('/quizQuestions/:name/results', function(req, res) {
+  router.get('/:name/results', function(req, res) {
     res.render('results');
   });
 

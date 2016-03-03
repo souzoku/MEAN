@@ -76,8 +76,9 @@ quizApp.controller('QuizController', function($scope, $http) {
 
     $scope.resetSubmit = function() {
     	$scope.reset();
-    	window.location='/quizQuestions/simonsQuiz';
-    }
+    	window.location='/quiz';
+    };
+    
 	$scope.delete = function() {
 		$http.delete('/quizQuestions').then(function(response) {
 			$scope.quizQuestions = [];
